@@ -1,0 +1,4 @@
+baseURL = "http://askyammer.github.io/blog/"
+languageCode = "en-us"
+title = "Ask Yammer"
+theme = "ananke"
