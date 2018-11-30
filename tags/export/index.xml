@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Export on Ask Yammer</title>
+    <link>https://askyammer.github.io/tags/export/</link>
+    <description>Recent content in Export on Ask Yammer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 27 Apr 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://askyammer.github.io/tags/export/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Interpreting a Yammer User Export</title>
+      <link>https://askyammer.github.io/post/2016-04-28-interpreting-a-yammer-user-export/</link>
+      <pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2016-04-28-interpreting-a-yammer-user-export/</guid>
+      <description>Admins can use this document to assist with looking up data on your users, as well as being able to perform an audit of the users who are members of your network. Additionally, admins can perform user maintenance based off the current state of your users based on this data.
+Performing the Export Yammer Network Admins have the ability to export user information for their network. To export the data use the Export Users feature.</description>
+    </item>
+    
+  </channel>
+</rss>
