@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Suspended on Ask Yammer</title>
+    <link>https://askyammer.github.io/tags/suspended/</link>
+    <description>Recent content in Suspended on Ask Yammer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 01 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://askyammer.github.io/tags/suspended/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>When Does a User Get Logged Out of Yammer?</title>
+      <link>https://askyammer.github.io/post/2016-11-01-when-does-a-user-get-logged-out-of-yammer/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2016-11-01-when-does-a-user-get-logged-out-of-yammer/</guid>
+      <description>When a user logs in to Yammer on the web, mobile application or authenticate with a Yammer app, they get a token. The token for the Yammer mobile application and to a Yammer app will be valid as long as the user is active (and they didn’t revoke access to the app). On the web the session has the lifetime of the browser (See Session timeouts for Office 365 this article for more details).</description>
+    </item>
+    
+  </channel>
+</rss>
