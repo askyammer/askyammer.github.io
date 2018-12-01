@@ -12,6 +12,7 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentOptions = "linenos=inline"
 #disqusShortname = "XXX"
 #googleAnalytics = "XXX"
+publishDir = "../askyammer.github.io"
 
 [Params]
 #  homeTitle = "Ask Yammer" # Set a different text for the header on the home page
