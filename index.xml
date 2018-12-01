@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ask Yammer</title>
+    <link>https://askyammer.github.io/</link>
+    <description>Recent content on Ask Yammer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 30 Nov 2018 17:33:11 -0800</lastBuildDate>
+    
+	<atom:link href="https://askyammer.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://askyammer.github.io/post/my-first-post/</link>
+      <pubDate>Fri, 30 Nov 2018 17:33:11 -0800</pubDate>
+      
+      <guid>https://askyammer.github.io/post/my-first-post/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>https://askyammer.github.io/post/2018-11-28-welcome/</link>
+      <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2018-11-28-welcome/</guid>
+      <description>We&amp;rsquo;ve moved from the TechNet/MSDN Blogs to this new format to better serve our user base.</description>
+    </item>
+    
+    <item>
+      <title>Yammer API Primer</title>
+      <link>https://askyammer.github.io/post/2017-09-05-yammer-api-primer/</link>
+      <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2017-09-05-yammer-api-primer/</guid>
+      <description>While most day to day tasks can be accomplished in the Yammer web app, utilizing our APIs can open up administrative and automation options previously very time consuming. If you’ve never worked with an API before, this can seem like a daunting task. With this article, I hope to demystify APIs and illustrate how anyone can utilize them to perform tasks like obtaining, posting, and deleting messages.
+Parts of an API call There are 3 main parts of an API call:</description>
+    </item>
+    
+    <item>
+      <title>Authorizing the Yammer JS SDK</title>
+      <link>https://askyammer.github.io/post/2016-11-04-authorizing-the-yammer-js-sdk/</link>
+      <pubDate>Fri, 04 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2016-11-04-authorizing-the-yammer-js-sdk/</guid>
+      <description>Under normal circumstances, users will have to create a Yammer session before using the JS SDK in scenarios like apps integrated on intranet pages. If you’re able to implement both server and client side scripting and pull the current user’s email address, you can use this guide to preauthorize a Yammer session so apps utilizing the JS SDK will be as seamless as possible.
+Prerequisites and Assumptions You have created an app in Yammer and properly configured the JavaScript Origins You have an app utilizing the Yammer JS SDK with users manually authenticating as per our documentation at https://developer.</description>
+    </item>
+    
+    <item>
+      <title>When Does a User Get Logged Out of Yammer?</title>
+      <link>https://askyammer.github.io/post/2016-11-01-when-does-a-user-get-logged-out-of-yammer/</link>
+      <pubDate>Tue, 01 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2016-11-01-when-does-a-user-get-logged-out-of-yammer/</guid>
+      <description>When a user logs in to Yammer on the web, mobile application or authenticate with a Yammer app, they get a token. The token for the Yammer mobile application and to a Yammer app will be valid as long as the user is active (and they didn’t revoke access to the app). On the web the session has the lifetime of the browser (See Session timeouts for Office 365 this article for more details).</description>
+    </item>
+    
+    <item>
+      <title>Find Office 365 users with Yammer licenses</title>
+      <link>https://askyammer.github.io/post/2016-10-25-find-office365-users-with-yammer-licenses/</link>
+      <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2016-10-25-find-office365-users-with-yammer-licenses/</guid>
+      <description>Many times, we see customers that would like to know how many of their users have license for a specific Office 365 service. This post focuses on how to locate the users with Yammer licenses using PowerShell, it is based on this TechNet article: View account license and service details with Office 365 PowerShell with some changes regarding Yammer.
+Before you begin The procedures in this topic require you to connect to Office 365 PowerShell.</description>
+    </item>
+    
+    <item>
+      <title>Join External Networks on Yammer</title>
+      <link>https://askyammer.github.io/post/2016-07-21-join-external-networks-on-yammer/</link>
+      <pubDate>Thu, 21 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2016-07-21-join-external-networks-on-yammer/</guid>
+      <description>As a Verified Admin of a canonical Yammer network, you can decide if users in your network can join other external networks. For example, as an admin you can approve your user’s requests to join external networks.
+In this post we will describe the approval process for a user who wants to join an external network of another organization, when user&amp;rsquo;s home network admin has set above mentioned setting to require the admin’s approval.</description>
+    </item>
+    
+    <item>
+      <title>Your Office 365 tenant is associated with two or more canonical (home) Yammer networks</title>
+      <link>https://askyammer.github.io/post/2016-04-15-your-office365-tenant-is-associated-with-two-or-more-canonical-home-yammer-networks/</link>
+      <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2016-04-15-your-office365-tenant-is-associated-with-two-or-more-canonical-home-yammer-networks/</guid>
+      <description>Have you recently received an email from Yammer stating that your Office 365 tenant is associated with two or more Yammer networks? If you are wondering what that means and what you can do – we are here to help.
+A Yammer network can be associated with an Office 365 tenant in several ways:
+ One Office 365 tenant associated with one Yammer network (1 tenant: 1 network) One Office 365 tenant associated with many Yammer networks (1 tenant: many networks) Many Office 365 tenants associated with one Yammer network (many tenants: 1 network)  This document explains in more detail the implications of each of these configurations.</description>
+    </item>
+    
+    <item>
+      <title>Interpreting a Yammer User Export</title>
+      <link>https://askyammer.github.io/post/2016-04-28-interpreting-a-yammer-user-export/</link>
+      <pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2016-04-28-interpreting-a-yammer-user-export/</guid>
+      <description>Admins can use this document to assist with looking up data on your users, as well as being able to perform an audit of the users who are members of your network. Additionally, admins can perform user maintenance based off the current state of your users based on this data.
+Performing the Export Yammer Network Admins have the ability to export user information for their network. To export the data use the Export Users feature.</description>
+    </item>
+    
+    <item>
+      <title>Yammer Mobile App Logon Scenarios</title>
+      <link>https://askyammer.github.io/post/2015-04-27-yammer-mobile-app-logon-scenarios/</link>
+      <pubDate>Mon, 27 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://askyammer.github.io/post/2015-04-27-yammer-mobile-app-logon-scenarios/</guid>
+      <description>Yammer offers several different options when it comes to logging in so you can choose the one that’s best for your organization. As such, there are many different login flows you may see depending on which method is employed on your network. Below, I have detailed each of these flows so you can know what to expect for your configuration (note: Screenshots taken on iOS).
+Office 365 sign-in for Yammer If you&amp;rsquo;re using Office 365 sign-in for Yammer (more info available here), you&amp;rsquo;ll see the following flow:</description>
+    </item>
+    
+  </channel>
+</rss>
