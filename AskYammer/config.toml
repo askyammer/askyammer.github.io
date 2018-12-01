@@ -1,4 +1,4 @@
-baseurl = "https://askyammer.github.io/"
+baseurl = "https://askyammer.github.io"
 DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
 title = "Ask Yammer"
