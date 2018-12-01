@@ -1,8 +1,8 @@
-#The Ask Yammer Blog
+# The Ask Yammer Blog
 
 This blog is built off of Hugo and hosted through GitHub.
 
-##Getting Started
+## Getting Started
 
 ### Must Have:
 * [Git For Windows installed](https://git-scm.com/download/win)
