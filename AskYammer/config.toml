@@ -11,7 +11,7 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentsUseClassic = true
 #pygmentOptions = "linenos=inline"
 #disqusShortname = "XXX"
-#googleAnalytics = "UA-32156361-3"
+googleAnalytics = "UA-32156361-3"
 publishDir = ".."
 
 [Params]
