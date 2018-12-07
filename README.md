@@ -29,7 +29,13 @@ This blog is built off of Hugo and hosted through GitHub.
 
 ### In Git for Windows
 
+#### Never cloned the repository
 `git clone https://github.com/askyammer/askyammer.github.io.git`
+> This command tells `git` to `clone` what we have hosted on GitHub for the `askyammer.github.io` project. When you clone a project, it then will live natively on your system. This should only be done initially and not everytime you need to make a post
+
+#### Previously cloned the repository
+`git pull origin master`
+> This command tells `git` to `pull` the `origin` from `master`. By doing this, you will update your locally hosted files on your machine with what GitHub already has. This is helpful so you don't overwrite another persons changes that they may have made with the repository. You should always pull before posting a new item to the blog
 
 #### Congratulations! You now have the repro on your machine and ready for you to post.
 
@@ -66,9 +72,11 @@ You can see what the post will look like by using the following:
 
 * Make sure that you are in the AskYammer directory, and not the askyammer.github.io directory
 
-`hugo`
-
-`hugo server`
+````
+hugo
+hugo server
+````
+> The first command (`hugo`) tells Hugo to build out the site in the root directory. The second command (`hugo server`) starts the server process
 
 Now navigate to [localhost:1313](http://localhost:1313) in a browser and you should see the post listed there. You can click on it and see what it looks like. 
 
@@ -78,9 +86,11 @@ If you make changes to the file while Hugo Server is running, it will show you a
 
 Ctrl+C
 
-`hugo`
-
-`./deploy.sh`
+````
+hugo
+./deploy.sh "New Blog Post"
+````
+> The second command (`./deploy.sh "New Blog Post"`) is a script that will go through and push your changes to master here in GitHub. By having `"New Blog Post"` written out shows what was changed to Master so we know what kind of stuff you pushed out.
 
 Now it should deploy to GitHub and make the whole thing live!
 
