@@ -2,11 +2,12 @@
 
 This blog is built off of Hugo and hosted through GitHub.
 
-## Table of Contents
 - [Getting Started](#getting-started)
   * [Must Have](#must-have)
   * [Install all the things](#install-all-the-things)
-  * [In Git for Windows](#in-git-for-windows)
+  * [Start using Git](#start-using-git)
+    + [Never cloned the repository](#never-cloned-the-repository)
+    + [Previously cloned the repository](#previously-cloned-the-repository)
 - [Posting a new blog entry](#posting-a-new-blog-entry)
   * [Creating a post](#creating-a-post)
   * [Sending the post to GitHub](#sending-the-post-to-github)
