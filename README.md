@@ -27,7 +27,7 @@ This blog is built off of Hugo and hosted through GitHub.
 2. Follow [these instructions](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) to generate a new SSH key
 3. Follow [these instructions](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) to add the SSH key to your GitHub account
 
-### In Git for Windows
+### Start using Git
 
 #### Never cloned the repository
 `git clone https://github.com/askyammer/askyammer.github.io.git`
@@ -37,7 +37,7 @@ This blog is built off of Hugo and hosted through GitHub.
 `git pull origin master`
 > This command tells `git` to `pull` the `origin` from `master`. By doing this, you will update your locally hosted files on your machine with what GitHub already has. This is helpful so you don't overwrite another persons changes that they may have made with the repository. You should always pull before posting a new item to the blog
 
-#### Congratulations! You now have the repro on your machine and ready for you to post.
+**Congratulations! You now have the repro on your machine and ready for you to post.**
 
 ## Posting a new blog entry
 
@@ -53,6 +53,7 @@ YYYY-MM-DD-This-Is-My-Post.md
 ### Creating a post
 You need to be in the GitHub/askyammer.github.io/AskYammer folder
 
+_In Git:_
 `hugo new post/YYYY-MM-DD-This-Is-My-Post.md`
 
 At this point you can either edit inside of Git using VIM, or you can open the file with your preferred editor
@@ -70,7 +71,7 @@ Now for the fun part!
 
 You can see what the post will look like by using the following:
 
-* Make sure that you are in the AskYammer directory, and not the askyammer.github.io directory
+> Make sure that you are in the AskYammer directory, and not the askyammer.github.io directory
 
 ````
 hugo
@@ -85,6 +86,7 @@ If you make changes to the file while Hugo Server is running, it will show you a
 **Now**
 
 Ctrl+C
+> Ctrl+C is the command you use to close out of whatever you are currently running. The cursor will reappear and you can continue working on your stuff.
 
 ````
 hugo
