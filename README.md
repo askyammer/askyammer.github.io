@@ -11,6 +11,7 @@ This blog is built off of Hugo and hosted through GitHub.
 - [Posting a new blog entry](#posting-a-new-blog-entry)
   * [Creating a post](#creating-a-post)
   * [Sending the post to GitHub](#sending-the-post-to-github)
+- [Editing a Post](#editing-a-post)
 - [HELP ME](#help-me)
 
 ## Getting Started
@@ -97,7 +98,7 @@ hugo
 
 Now it should deploy to GitHub and make the whole thing live!
 
-### Editing a Post
+#### Editing a Post
 1. Edit your post in your preferred editor
 2. Save the changes to GitHub through the web
 3. Perform the following in GitBash
