@@ -97,5 +97,17 @@ hugo
 
 Now it should deploy to GitHub and make the whole thing live!
 
+### Editing a Post
+1. Edit your post in your preferred editor
+2. Save the changes to GitHub through the web
+3. Perform the following in GitBash
+````
+git pull origin master
+cd to askyammer.github.io/askyammer
+hugo
+git add --all
+./deploy.sh "New Blog Post"
+````
+
 ## HELP ME
 Ping [Dan Long](https://www.yammer.com/microsoft.com/#/users/1510044728) in Yammer and I should be able to assist you :heart:
