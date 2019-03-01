@@ -5,7 +5,7 @@
     <link>https://askyammer.github.io/tags/</link>
     <description>Recent content in Tags on Ask Yammer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 05 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Feb 2019 19:08:33 -0600</lastBuildDate>
     
 	<atom:link href="https://askyammer.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>Api</title>
       <link>https://askyammer.github.io/tags/api/</link>
-      <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Feb 2019 19:08:33 -0600</pubDate>
       
       <guid>https://askyammer.github.io/tags/api/</guid>
       <description></description>
@@ -43,6 +43,15 @@
       <pubDate>Thu, 21 Jul 2016 00:00:00 +0000</pubDate>
       
       <guid>https://askyammer.github.io/tags/external/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Files</title>
+      <link>https://askyammer.github.io/tags/files/</link>
+      <pubDate>Wed, 27 Feb 2019 19:08:33 -0600</pubDate>
+      
+      <guid>https://askyammer.github.io/tags/files/</guid>
       <description></description>
     </item>
     
@@ -103,7 +112,7 @@
     <item>
       <title>Powershell</title>
       <link>https://askyammer.github.io/tags/powershell/</link>
-      <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Feb 2019 19:08:33 -0600</pubDate>
       
       <guid>https://askyammer.github.io/tags/powershell/</guid>
       <description></description>

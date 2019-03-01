@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>File Storage in Yammer - Ask Yammer</title>
+  <meta property="og:title" content="File Storage in Yammer" />
+  <meta name="twitter:title" content="File Storage in Yammer" />
+  <meta name="description" content="By Alex Blaine">
+  <meta property="og:description" content="By Alex Blaine">
+  <meta name="twitter:description" content="By Alex Blaine">
+  <meta name="author" content="Yammer Support"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Ask Yammer",
+    
+    "url": "https://askyammer.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https://askyammer.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://askyammer.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://askyammer.github.io/post/2019-02-28-file-storage-in-yammer/",
+          "name": "File storage in yammer"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Yammer Support"
+  },
+  "headline": "File Storage in Yammer",
+  "description" : "With our upcoming move to store Yammer files in SharePoint, we&amp;rsquo;ve received requests from admins to help audit the files currently stored in Yammer. While we don&amp;rsquo;t expect file storage quotas in SharePoint to be an issue, we understand that Yammer admins would like some additional clarity about how much file storage is being used in Yammer. The below PowerShell script will generate a .csv file showing how much data is stored in each Yammer group as well as the total of all files in the Yammer network.",
+  "inLanguage" : "en",
+  "wordCount": 1324,
+  "datePublished" : "2019-02-27T19:08:33",
+  "dateModified" : "2019-02-27T19:08:33",
+  "image" : "https://askyammer.github.io/img/SiteWide%20Images/avatar-favicon.png",
+  "keywords" : [ "API, PowerShell, Files" ],
+  "mainEntityOfPage" : "https://askyammer.github.io/post/2019-02-28-file-storage-in-yammer/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https://askyammer.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https://askyammer.github.io/img/SiteWide%20Images/avatar-favicon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="File Storage in Yammer" />
+<meta property="og:description" content="By Alex Blaine">
+<meta property="og:image" content="https://askyammer.github.io/img/SiteWide%20Images/avatar-favicon.png" />
+<meta property="og:url" content="https://askyammer.github.io/post/2019-02-28-file-storage-in-yammer/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Ask Yammer" />
+  <meta name="twitter:title" content="File Storage in Yammer" />
+  <meta name="twitter:description" content="By Alex Blaine">
+  <meta name="twitter:image" content="https://askyammer.github.io/img/SiteWide%20Images/avatar-favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://askyammer.github.io/img/SiteWide%20Images/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://askyammer.github.io/img/SiteWide%20Images/avatar-favicon.png" />
+  <meta name="twitter:image" content="https://askyammer.github.io/img/SiteWide%20Images/avatar-favicon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://askyammer.github.io/post/2019-02-28-file-storage-in-yammer/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ask Yammer" />
+
+  <meta name="generator" content="Hugo 0.54.0" />
+  <link rel="alternate" href="https://askyammer.github.io/index.xml" type="application/rss+xml" title="Ask Yammer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://askyammer.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://askyammer.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://askyammer.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-32156361-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://askyammer.github.io">Ask Yammer</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Ask Yammer" href="https://askyammer.github.io">
+            <img class="avatar-img" src="https://askyammer.github.io/img/SiteWide%20Images/avatar-favicon.png" alt="Ask Yammer" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>File Storage in Yammer</h1>
+              
+              
+              
+                
+                  <h2 class="post-subheading">By Alex Blaine</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 27, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;7&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1324&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yammer Support
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>With our upcoming move to <a href="https://support.office.com/en-us/article/how-do-i-tell-where-my-yammer-files-are-being-stored-fadfdefa-e00d-40b6-94cb-a9ddb171a443">store Yammer files in SharePoint</a>, we&rsquo;ve received requests from admins to help audit the files currently stored in Yammer.  While we don&rsquo;t expect file storage quotas in SharePoint to be an issue, we understand that Yammer admins would like some additional clarity about how much file storage is being used in Yammer.  The below PowerShell script will generate a .csv file showing how much data is stored in each Yammer group as well as the total of all files in the Yammer network.</p>
+
+<h3 id="prerequesites">Prerequesites</h3>
+
+<p>In order to utilize this script, you&rsquo;ll need to provide some additional information:</p>
+
+<ol>
+<li>A Verified Admin&rsquo;s OAuth token, stored in the $oauthToken variable at the top of the script.  If you&rsquo;re unfamiliar with this concept or need a refresher on how to generate one of these, please see the Authorizing an API call section of my <a href="https://askyammer.github.io/post/2017-09-05-yammer-api-primer/">Yammer API Primer</a>.</li>
+<li>The Files.csv file from a <a href="https://docs.microsoft.com/en-us/yammer/manage-security-and-compliance/export-yammer-enterprise-data#export-yammer-network-data-by-date-range-and-network">data export of your network</a>.  This script will only calculate the size of files listed in this export, so ensure the date range used encapsulates the lifetime of your Yammer network.  For the purposes of this script, it&rsquo;s recommended that you do not include attachments or external networks in the export</li>
+<li>An up to date version of PowerShell.  This script was written and tested on PowerShell version 5.1.17763.316.  You can determine your PowerShell version by outputting the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6#psversiontable">$PSVersionTable.PSVersion</a> variable</li>
+</ol>
+
+<h3 id="how-to-use-this-script">How to use this script</h3>
+
+<p>Start by copying the text in the script below and pasting it into a .ps1 file you create on your hard drive.  You&rsquo;ll then need to populate the $filesCsvPath, $outCsvPath, and $oauthToken variables at the top of the script.  The $filesCsvPath variable should contain the path to the Files.csv file you extracted from a data export.  The $outCsvPath should contain the path and name of the file to which you&rsquo;d like the script&rsquo;s output written.  Keep in mind if you provide a path to an existing file, that file will be overwritten by this script so please enter a path with a unique file name.</p>
+
+<h3 id="how-this-script-works">How this script works</h3>
+
+<p>This script will first test that you have provided a valid Verified Admin token and then loop through each line in your Files.csv file.  It will make an API call to the file_api_url in each row (appending .json to the end to receive a .json response rather than .xml).  It pulls the file size in bytes from the file metadata returned by this API call and adds it to the total file size of the group to which the file belongs.  If the script encounters a file in a group it hasn&rsquo;t seen before, it&rsquo;ll create a new entry for that group and start totalling the size of files in that group.  Private Messages and All Company are special cases in that they don&rsquo;t have group IDs and won&rsquo;t be stored in SharePoint, so files in those categories are separated out into their own &ldquo;groups.&rdquo;  At the end of the script, it will convert the byte totals to a more human readable file size (in KB, MB, GB) and output its findings both to the PowerShell window and to a .csv file located at the path you&rsquo;ve provided.</p>
+
+<h3 id="the-script">The Script</h3>
+<div class="highlight"><pre class="chroma"><code class="language-PowerShell" data-lang="PowerShell"><span class="c"># Get the total size of files stored in your Yammer network, separated by group</span>
+<span class="c"># All Company and Private Messages will stay in Yammer file storage and will be grouped together</span>
+<span class="c"># First enable Private Content Mode, export network data over the life of your network, and</span>
+<span class="c"># Pull out the Files.csv from that export.  Add your Admin token to $oauthToken below and</span>
+<span class="c"># the path to Files.csv in $filesCsvPath</span>
+<span class="c"># We&#39;ll be outputting the data to screen and to a .csv so enter the desired path to the output</span>
+<span class="c"># file in $outCsvPath </span>
+
+<span class="nv">$filesCsvPath</span> <span class="p">=</span> <span class="s1">&#39;C:\Path\To\Files.csv&#39;</span>
+<span class="nv">$outCsvPath</span> <span class="p">=</span> <span class="s1">&#39;C:\Path\To\CSVOutput.csv&#39;</span>
+<span class="nv">$oauthToken</span> <span class="p">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="c"># Test $oauthToken</span>
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$currentUser</span> <span class="p">=</span> <span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="s1">&#39;https://www.yammer.com/api/v1/users/current.json&#39;</span> <span class="p">`</span>
+                                     <span class="n">-Headers</span> <span class="p">@{</span><span class="s1">&#39;Authorization&#39;</span> <span class="p">=</span> <span class="s2">&#34;Bearer </span><span class="p">$(</span><span class="nv">$oauthToken</span><span class="p">)</span><span class="s2">&#34;</span><span class="p">}</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+    <span class="nv">$errorText</span> <span class="p">=</span> <span class="s2">&#34;Could not verify OAuth Token.  &#34;</span> <span class="p">`</span>
+                <span class="p">+</span> <span class="s2">&#34;Received response code: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">StatusCode</span><span class="p">.</span><span class="n">Value__</span><span class="p">)</span><span class="s2">&#34;</span> <span class="p">`</span>
+                <span class="p">+</span> <span class="s2">&#34;with description: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">StatusDescription</span><span class="p">)</span><span class="s2">&#34;</span>
+    <span class="nb">Write-Output</span> <span class="nv">$errorText</span>
+    <span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s2">&#34;Press Enter to exit&#34;</span>
+    <span class="k">Return</span>
+<span class="p">}</span>
+
+<span class="c"># Convert the .json response into an Object</span>
+<span class="nv">$userObject</span> <span class="p">=</span> <span class="nb">ConvertFrom-Json</span> <span class="nv">$currentUser</span><span class="p">.</span><span class="n">Content</span> 
+<span class="k">if</span><span class="p">(</span> <span class="nv">$userObject</span><span class="p">.</span><span class="n">verified_admin</span> <span class="o">-ne</span> <span class="s1">&#39;true&#39;</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nb">Write-Output</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="nv">$userObject</span><span class="p">.</span><span class="n">email</span><span class="p">)</span><span class="s2"> is not a Verified Admin.  Please provide a VA token&#34;</span>
+    <span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s2">&#34;Press Enter to exit&#34;</span>
+    <span class="k">Return</span>
+<span class="p">}</span>
+
+<span class="c"># Initialize array to hold each group&#39;s file size</span>
+<span class="nv">$groupFileSizeTotal</span> <span class="p">=</span> <span class="p">@{}</span>
+
+<span class="c"># Test opening Files.csv</span>
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$filesCsv</span> <span class="p">=</span> <span class="nb">Import-Csv</span> <span class="nv">$filesCsvPath</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+    <span class="nb">Write-Output</span> <span class="s2">&#34;Could not load files CSV.  Please ensure you&#39;ve provided the correct path.&#34;</span>
+    <span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s2">&#34;Press Enter to exit&#34;</span>
+    <span class="k">Return</span>
+<span class="p">}</span>
+
+<span class="c"># Loop through Files.csv, make API call, check for rate limiting, add file size to group total</span>
+<span class="nv">$filesCsv</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="nv">$retryCall</span> <span class="p">=</span> <span class="nv">$false</span>
+        <span class="c"># Make sure we omit deleted files as this will return a 404</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="nv">$_</span><span class="p">.</span><span class="n">deleted_at</span><span class="p">)</span> <span class="p">{</span> 
+            <span class="c">#Store group_id and name for file size array index</span>
+            <span class="nv">$groupIndex</span> <span class="p">=</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">group_id</span><span class="p">)</span><span class="s2"> - </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">group_name</span><span class="p">)</span><span class="s2">&#34;</span> 
+            <span class="nv">$inPM</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="n">in_private_conversation</span>
+            <span class="c"># Append .json to end of API URL for .json payload</span>
+            <span class="nv">$uri</span> <span class="p">=</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">file_api_url</span><span class="p">)</span><span class="s2">.json&#34;</span> 
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="nv">$response</span> <span class="p">=</span> <span class="nb">Invoke-WebRequest</span> <span class="n">-Uri</span> <span class="nv">$uri</span> <span class="p">`</span>
+                                              <span class="n">-Headers</span> <span class="p">@{</span><span class="s1">&#39;Authorization&#39;</span> <span class="p">=</span> <span class="s2">&#34;Bearer </span><span class="p">$(</span><span class="nv">$oauthToken</span><span class="p">)</span><span class="s2">&#34;</span><span class="p">}</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+                <span class="k">if</span><span class="p">(</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">StatusCode</span><span class="p">.</span><span class="n">Value__</span> <span class="o">-eq</span> <span class="n">429</span> <span class="p">`</span>
+                <span class="o">-or</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">StatusCode</span><span class="p">.</span><span class="n">Value__</span> <span class="o">-eq</span> <span class="n">503</span> <span class="p">)</span> <span class="p">{</span>
+                    <span class="nv">$retryCall</span> <span class="p">=</span> <span class="nv">$true</span>
+                <span class="p">}</span>
+                <span class="nv">$errorText</span> <span class="p">=</span> <span class="s2">&#34;Could not retrieve File Metadata.  &#34;</span> <span class="p">`</span>
+                            <span class="p">+</span> <span class="s2">&#34;Received response code: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">StatusCode</span><span class="p">.</span><span class="n">Value__</span><span class="p">)</span><span class="s2"> &#34;</span> <span class="p">`</span>
+                            <span class="p">+</span> <span class="s2">&#34;with description: </span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Response</span><span class="p">.</span><span class="n">StatusDescription</span><span class="p">)</span><span class="s2">&#34;</span>
+                <span class="nb">Write-Output</span> <span class="nv">$errorText</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nv">$retryCall</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c"># If we get rate limited or service unavailable, back off for 15 seconds and retry</span>
+                <span class="nv">$errorText</span> <span class="p">=</span> <span class="s1">&#39;We got rate limited or service was temporarily unavailable, &#39;</span> <span class="p">`</span>
+                            <span class="p">+</span> <span class="s1">&#39;sleeping for 15 seconds&#39;</span>
+                <span class="nb">Write-Output</span> <span class="nv">$errorText</span>
+                <span class="nb">Start-Sleep</span> <span class="n">-Seconds</span> <span class="n">15</span> 
+            <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$response</span><span class="p">.</span><span class="n">StatusCode</span> <span class="o">-eq</span> <span class="n">200</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c"># Convert the .json response into an Object we can use to pull the size</span>
+                <span class="nv">$responseObject</span> <span class="p">=</span> <span class="nb">ConvertFrom-Json</span> <span class="nv">$response</span><span class="p">.</span><span class="n">Content</span> 
+                <span class="c"># If this file isn&#39;t associated with a group ID</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nv">$groupIndex</span> <span class="o">-eq</span> <span class="s1">&#39; - &#39;</span><span class="p">)</span> <span class="p">{</span> 
+                    <span class="k">if</span> <span class="p">(</span><span class="nv">$inPM</span> <span class="o">-eq</span> <span class="s1">&#39;TRUE&#39;</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="c"># If we haven&#39;t seen any Private Message files before</span>
+                        <span class="k">if</span><span class="p">(</span><span class="o">-not</span> <span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="s1">&#39;Private Messages&#39;</span><span class="p">])</span> <span class="p">{</span> 
+                            <span class="c"># Initialize PM entry and store file size in it</span>
+                            <span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="s1">&#39;Private Messages&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="nv">$responseObject</span><span class="p">.</span><span class="n">files</span><span class="p">.</span><span class="n">size</span> 
+                        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                            <span class="c"># Add to Private Messages total</span>
+                            <span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="s1">&#39;Private Messages&#39;</span><span class="p">]</span> <span class="p">+=</span> <span class="nv">$responseObject</span><span class="p">.</span><span class="n">files</span><span class="p">.</span><span class="n">size</span> 
+                        <span class="p">}</span>
+                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                        <span class="c"># If we haven&#39;t seen any All Company files before</span>
+                        <span class="k">if</span><span class="p">(</span><span class="o">-not</span> <span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="s1">&#39;All Company&#39;</span><span class="p">])</span> <span class="p">{</span> 
+                            <span class="c"># Initialize All Company entry and store file size in it</span>
+                            <span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="s1">&#39;All Company&#39;</span><span class="p">]</span> <span class="p">=</span> <span class="nv">$responseObject</span><span class="p">.</span><span class="n">files</span><span class="p">.</span><span class="n">size</span> 
+                        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                            <span class="c"># Add to All Company total</span>
+                            <span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="s1">&#39;All Company&#39;</span><span class="p">]</span> <span class="p">+=</span> <span class="nv">$responseObject</span><span class="p">.</span><span class="n">files</span><span class="p">.</span><span class="n">size</span> 
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="c"># If we haven&#39;t seen this group before</span>
+                    <span class="k">if</span><span class="p">(</span><span class="o">-not</span> <span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="nv">$groupIndex</span><span class="p">])</span> <span class="p">{</span> 
+                        <span class="c"># Initialize this group&#39;s entry and store current file&#39;s size in it</span>
+                        <span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="nv">$groupIndex</span><span class="p">]</span> <span class="p">=</span> <span class="nv">$responseObject</span><span class="p">.</span><span class="n">files</span><span class="p">.</span><span class="n">size</span> 
+                    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                        <span class="c"># Add the file size of the current file to its group&#39;s total</span>
+                        <span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="nv">$groupIndex</span><span class="p">]</span> <span class="p">+=</span> <span class="nv">$responseObject</span><span class="p">.</span><span class="n">files</span><span class="p">.</span><span class="n">size</span> 
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="nv">$retryCall</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c"># Function to convert bytes to human readable size</span>
+<span class="k">Function</span> <span class="n">HumanReadable</span><span class="p">(</span><span class="nv">$bytes</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$bytes</span> <span class="p">/</span> <span class="n">1tb</span> <span class="o">-ge</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="nv">$bytes</span> <span class="p">/</span> <span class="n">1tb</span><span class="p">)</span><span class="s2">TB&#34;</span>
+    <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$bytes</span> <span class="p">/</span> <span class="n">1gb</span> <span class="o">-ge</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$bytes</span> <span class="p">/</span> <span class="n">1gb</span><span class="p">,</span><span class="n">2</span><span class="p">))</span><span class="s2">GB&#34;</span>
+    <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$bytes</span> <span class="p">/</span> <span class="n">1mb</span> <span class="o">-ge</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$bytes</span> <span class="p">/</span> <span class="n">1mb</span><span class="p">,</span><span class="n">2</span><span class="p">))</span><span class="s2">MB&#34;</span>
+    <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$bytes</span> <span class="p">/</span> <span class="n">1kb</span> <span class="o">-ge</span> <span class="n">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="no">[math]</span><span class="p">::</span><span class="n">Round</span><span class="p">(</span><span class="nv">$bytes</span> <span class="p">/</span> <span class="n">1kb</span><span class="p">,</span><span class="n">2</span><span class="p">))</span><span class="s2">KB&#34;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s2">&#34;</span><span class="p">$(</span><span class="nv">$bytes</span><span class="p">)</span><span class="s2">B&#34;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c"># Generate CSV Output</span>
+<span class="nv">$csvOut</span> <span class="p">=</span> <span class="p">@()</span>
+<span class="c"># Variable to hold total file size in network</span>
+<span class="nv">$totalFileSize</span> <span class="p">=</span> <span class="n">0</span> 
+<span class="k">foreach</span><span class="p">(</span><span class="nv">$key</span> <span class="k">in</span> <span class="nv">$groupFileSizeTotal</span><span class="p">.</span><span class="n">Keys</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$totalFileSize</span> <span class="p">+=</span> <span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="nv">$key</span><span class="p">]</span>
+    <span class="nv">$csvOut</span> <span class="p">+=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">PSobject</span> <span class="n">-Property</span> <span class="p">@{</span>
+        <span class="n">Group_ID_and_Name</span> <span class="p">=</span> <span class="nv">$key</span>
+        <span class="n">TotalFileSize</span> <span class="p">=</span> <span class="n">HumanReadable</span><span class="p">(</span><span class="nv">$groupFileSizeTotal</span><span class="p">[</span><span class="nv">$key</span><span class="p">])</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c"># Add a separator for Total File Size</span>
+<span class="nv">$csvOut</span> <span class="p">+=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">PSobject</span> <span class="n">-Property</span> <span class="p">@{</span>
+    <span class="n">Group_ID_and_Name</span> <span class="p">=</span> <span class="s2">&#34;--------&#34;</span>
+    <span class="n">TotalFileSize</span> <span class="p">=</span> <span class="s2">&#34;--------&#34;</span>
+<span class="p">}</span>
+
+<span class="c"># Add total file size</span>
+<span class="nv">$csvOut</span> <span class="p">+=</span> <span class="nb">New-Object</span> <span class="n">-TypeName</span> <span class="n">PSobject</span> <span class="n">-Property</span> <span class="p">@{</span>
+    <span class="n">Group_ID_and_Name</span> <span class="p">=</span> <span class="s2">&#34;Total file size in network&#34;</span>
+    <span class="n">TotalFileSize</span> <span class="p">=</span> <span class="n">HumanReadable</span><span class="p">(</span><span class="nv">$totalFileSize</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c"># Output to screen</span>
+<span class="nb">Write-Output</span> <span class="nv">$csvOut</span>
+
+<span class="c"># Write result to .csv</span>
+<span class="nv">$csvOut</span> <span class="p">|</span> <span class="nb">Export-Csv</span> <span class="n">-NoTypeInformation</span> <span class="n">-Path</span> <span class="nv">$outCsvPath</span>
+<span class="nb">Read-Host</span> <span class="n">-Prompt</span> <span class="s2">&#34;Press Enter to exit&#34;</span></code></pre></div>
+<h2 id="about-the-author">About the Author</h2>
+
+<p><strong>Alex Blaine</strong> is a Support Escalation Engineer and code monkey on the Yammer Support Escalation team.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://askyammer.github.io/tags/api/">API</a>&nbsp;
+            
+              <a href="https://askyammer.github.io/tags/powershell/">PowerShell</a>&nbsp;
+            
+              <a href="https://askyammer.github.io/tags/files/">Files</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+          
+          
+          <h4 class="see-also">See also</h4>
+          <ul>
+          
+            <li><a href="/post/2017-09-05-yammer-api-primer/">Yammer API Primer</a></li>
+          
+          </ul>
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://askyammer.github.io/post/2018-11-28-welcome/" data-toggle="tooltip" data-placement="top" title="Welcome">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+          <li>
+            
+            <a href="https://askyammer.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Yammer Support
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://askyammer.github.io">Ask Yammer</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.54.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://askyammer.github.io/js/main.js"></script>
+<script src="https://askyammer.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://askyammer.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
