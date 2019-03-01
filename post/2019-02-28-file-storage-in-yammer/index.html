@@ -63,9 +63,9 @@
   "headline": "File Storage in Yammer",
   "description" : "With our upcoming move to store Yammer files in SharePoint, we&amp;rsquo;ve received requests from admins to help audit the files currently stored in Yammer. While we don&amp;rsquo;t expect file storage quotas in SharePoint to be an issue, we understand that Yammer admins would like some additional clarity about how much file storage is being used in Yammer. The below PowerShell script will generate a .csv file showing how much data is stored in each Yammer group as well as the total of all files in the Yammer network.",
   "inLanguage" : "en",
-  "wordCount": 1364,
-  "datePublished" : "2019-02-27T19:08:33",
-  "dateModified" : "2019-02-27T19:08:33",
+  "wordCount": 1360,
+  "datePublished" : "2019-02-28T19:08:33",
+  "dateModified" : "2019-02-28T19:08:33",
   "image" : "https://askyammer.github.io/img/SiteWide%20Images/avatar-favicon.png",
   "keywords" : [ "API, PowerShell, Files" ],
   "mainEntityOfPage" : "https://askyammer.github.io/post/2019-02-28-file-storage-in-yammer/",
@@ -254,13 +254,13 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on February 27, 2019
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 28, 2019
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;7&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1364&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1360&nbsp;words
   
   
     &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yammer Support
@@ -289,11 +289,14 @@ if (!doNotTrack) {
 
 <h3 id="prerequesites">Prerequesites</h3>
 
-<p>In order to utilize this script, you&rsquo;ll need to provide some additional information:
-1. If you&rsquo;d like to audit files in private groups you don&rsquo;t belong to and Private Messages, ensure <a href="https://docs.microsoft.com/en-us/yammer/manage-security-and-compliance/monitor-private-content">Private Content Mode</a> is enabled before performing the data export and running the script below.
-2. A Verified Admin&rsquo;s OAuth token, stored in the $oauthToken variable at the top of the script.  If you&rsquo;re unfamiliar with this concept or need a refresher on how to generate one of these, please see the Authorizing an API call section of my <a href="https://askyammer.github.io/post/2017-09-05-yammer-api-primer/">Yammer API Primer</a>.
-3. The Files.csv file from a <a href="https://docs.microsoft.com/en-us/yammer/manage-security-and-compliance/export-yammer-enterprise-data#export-yammer-network-data-by-date-range-and-network">data export of your network</a>.  This script will only calculate the size of files listed in this export, so ensure the date range used encapsulates the lifetime of your Yammer network.  For the purposes of this script, it&rsquo;s recommended that you do not include attachments or external networks in the export
-4. An up to date version of PowerShell.  This script was written and tested on PowerShell version 5.1.17763.316.  You can determine your PowerShell version by outputting the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6#psversiontable">$PSVersionTable.PSVersion</a> variable</p>
+<p>In order to utilize this script, you&rsquo;ll need to provide some additional information:</p>
+
+<ol>
+<li>If you&rsquo;d like to audit files in private groups you don&rsquo;t belong to and Private Messages, ensure <a href="https://docs.microsoft.com/en-us/yammer/manage-security-and-compliance/monitor-private-content">Private Content Mode</a> is enabled before performing the data export and running the script below.</li>
+<li>A Verified Admin&rsquo;s OAuth token, stored in the $oauthToken variable at the top of the script.  If you&rsquo;re unfamiliar with this concept or need a refresher on how to generate one of these, please see the Authorizing an API call section of my <a href="https://askyammer.github.io/post/2017-09-05-yammer-api-primer/">Yammer API Primer</a>.</li>
+<li>The Files.csv file from a <a href="https://docs.microsoft.com/en-us/yammer/manage-security-and-compliance/export-yammer-enterprise-data#export-yammer-network-data-by-date-range-and-network">data export of your network</a>.  This script will only calculate the size of files listed in this export, so ensure the date range used encapsulates the lifetime of your Yammer network.  For the purposes of this script, it&rsquo;s recommended that you do not include attachments or external networks in the export</li>
+<li>An up to date version of PowerShell.  This script was written and tested on PowerShell version 5.1.17763.316.  You can determine your PowerShell version by outputting the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6#psversiontable">$PSVersionTable.PSVersion</a> variable</li>
+</ol>
 
 <h3 id="how-to-use-this-script">How to use this script</h3>
 
