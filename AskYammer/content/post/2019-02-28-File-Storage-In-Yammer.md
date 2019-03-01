@@ -1,7 +1,7 @@
 ---
 title: "File Storage in Yammer"
 subtitle: By Alex Blaine
-date: 2019-02-28T19:08:33-06:00
+date: 2019-02-27T19:08:33-06:00
 tags: ["API", "PowerShell", "Files"]
 ---
 
