@@ -1,7 +1,7 @@
 ---
 title: "File Storage in Yammer"
 subtitle: By Alex Blaine
-date: 2019-02-27T19:08:33-06:00
+date: 2019-02-28T19:08:33-06:00
 tags: ["API", "PowerShell", "Files"]
 ---
 
@@ -10,14 +10,14 @@ With our upcoming move to [store Yammer files in SharePoint](https://support.off
 ### Prerequesites
 
 In order to utilize this script, you'll need to provide some additional information:
-
-1. A Verified Admin's OAuth token, stored in the $oauthToken variable at the top of the script.  If you're unfamiliar with this concept or need a refresher on how to generate one of these, please see the Authorizing an API call section of my [Yammer API Primer](https://askyammer.github.io/post/2017-09-05-yammer-api-primer/).
-2. The Files.csv file from a [data export of your network](https://docs.microsoft.com/en-us/yammer/manage-security-and-compliance/export-yammer-enterprise-data#export-yammer-network-data-by-date-range-and-network).  This script will only calculate the size of files listed in this export, so ensure the date range used encapsulates the lifetime of your Yammer network.  For the purposes of this script, it's recommended that you do not include attachments or external networks in the export
-3. An up to date version of PowerShell.  This script was written and tested on PowerShell version 5.1.17763.316.  You can determine your PowerShell version by outputting the [$PSVersionTable.PSVersion](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6#psversiontable) variable
+1. If you'd like to audit files in private groups you don't belong to and Private Messages, ensure [Private Content Mode](https://docs.microsoft.com/en-us/yammer/manage-security-and-compliance/monitor-private-content) is enabled before performing the data export and running the script below.
+2. A Verified Admin's OAuth token, stored in the $oauthToken variable at the top of the script.  If you're unfamiliar with this concept or need a refresher on how to generate one of these, please see the Authorizing an API call section of my [Yammer API Primer](https://askyammer.github.io/post/2017-09-05-yammer-api-primer/).
+3. The Files.csv file from a [data export of your network](https://docs.microsoft.com/en-us/yammer/manage-security-and-compliance/export-yammer-enterprise-data#export-yammer-network-data-by-date-range-and-network).  This script will only calculate the size of files listed in this export, so ensure the date range used encapsulates the lifetime of your Yammer network.  For the purposes of this script, it's recommended that you do not include attachments or external networks in the export
+4. An up to date version of PowerShell.  This script was written and tested on PowerShell version 5.1.17763.316.  You can determine your PowerShell version by outputting the [$PSVersionTable.PSVersion](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6#psversiontable) variable
 
 ### How to use this script
 
-Start by copying the text in the script below and pasting it into a .ps1 file you create on your hard drive.  You'll then need to populate the $filesCsvPath, $outCsvPath, and $oauthToken variables at the top of the script.  The $filesCsvPath variable should contain the path to the Files.csv file you extracted from a data export.  The $outCsvPath should contain the path and name of the file to which you'd like the script's output written.  Keep in mind if you provide a path to an existing file, that file will be overwritten by this script so please enter a path with a unique file name.
+To ensure you can Start by copying the text in the script below and pasting it into a .ps1 file you create on your hard drive.  You'll then need to populate the $filesCsvPath, $outCsvPath, and $oauthToken variables at the top of the script.  The $filesCsvPath variable should contain the path to the Files.csv file you extracted from a data export.  The $outCsvPath should contain the path and name of the file to which you'd like the script's output written.  Keep in mind if you provide a path to an existing file, that file will be overwritten by this script so please enter a path with a unique file name.
 
 ### How this script works
 
