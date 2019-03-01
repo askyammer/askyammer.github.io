@@ -10,6 +10,7 @@ With our upcoming move to [store Yammer files in SharePoint](https://support.off
 ### Prerequesites
 
 In order to utilize this script, you'll need to provide some additional information:
+
 1. If you'd like to audit files in private groups you don't belong to and Private Messages, ensure [Private Content Mode](https://docs.microsoft.com/en-us/yammer/manage-security-and-compliance/monitor-private-content) is enabled before performing the data export and running the script below.
 2. A Verified Admin's OAuth token, stored in the $oauthToken variable at the top of the script.  If you're unfamiliar with this concept or need a refresher on how to generate one of these, please see the Authorizing an API call section of my [Yammer API Primer](https://askyammer.github.io/post/2017-09-05-yammer-api-primer/).
 3. The Files.csv file from a [data export of your network](https://docs.microsoft.com/en-us/yammer/manage-security-and-compliance/export-yammer-enterprise-data#export-yammer-network-data-by-date-range-and-network).  This script will only calculate the size of files listed in this export, so ensure the date range used encapsulates the lifetime of your Yammer network.  For the purposes of this script, it's recommended that you do not include attachments or external networks in the export
