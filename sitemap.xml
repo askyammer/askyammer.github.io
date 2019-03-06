@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://askyammer.github.io/post/2019-03-05-posting-message-with-attachment-via-api/</loc>
+    <lastmod>2019-03-05T18:19:27-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://askyammer.github.io/post/2019-03-07-posting-message-with-attachment-via-api/</loc>
+    <lastmod>2019-03-05T18:19:27-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://askyammer.github.io/post/2019-02-28-file-storage-in-yammer/</loc>
     <lastmod>2019-02-28T19:08:33-06:00</lastmod>
   </url>
@@ -54,13 +64,19 @@
   
   <url>
     <loc>https://askyammer.github.io/tags/api/</loc>
-    <lastmod>2019-02-28T19:08:33-06:00</lastmod>
+    <lastmod>2019-03-05T18:19:27-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://askyammer.github.io/</loc>
-    <lastmod>2019-02-28T19:08:33-06:00</lastmod>
+    <lastmod>2019-03-05T18:19:27-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://askyammer.github.io/tags/attachment/</loc>
+    <lastmod>2019-03-05T18:19:27-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -118,6 +134,12 @@
   </url>
   
   <url>
+    <loc>https://askyammer.github.io/tags/message/</loc>
+    <lastmod>2019-03-05T18:19:27-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://askyammer.github.io/tags/migration/</loc>
     <lastmod>2016-04-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -130,14 +152,20 @@
   </url>
   
   <url>
+    <loc>https://askyammer.github.io/tags/post/</loc>
+    <lastmod>2019-03-05T18:19:27-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://askyammer.github.io/post/</loc>
-    <lastmod>2019-02-28T19:08:33-06:00</lastmod>
+    <lastmod>2019-03-05T18:19:27-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://askyammer.github.io/tags/powershell/</loc>
-    <lastmod>2019-02-28T19:08:33-06:00</lastmod>
+    <lastmod>2019-03-05T18:19:27-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -155,7 +183,7 @@
   
   <url>
     <loc>https://askyammer.github.io/tags/</loc>
-    <lastmod>2019-02-28T19:08:33-06:00</lastmod>
+    <lastmod>2019-03-05T18:19:27-06:00</lastmod>
     <priority>0</priority>
   </url>
   
