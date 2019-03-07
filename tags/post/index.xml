@@ -19,14 +19,5 @@
       <description>Posting messages to Yammer via API is a relatively simple process. When you want to add file attachments into the mix, things get more complicated as you have to utilize multi-part form data to post the message. I&amp;rsquo;ll be focusing on posting a message to Yammer with an attachment in a single API call. Keep in mind this method only supports attachments up to 25MB in size. If you need to post files larger than 25MB, you&amp;rsquo;ll need to use the Yammer web, desktop, or mobile clients for this.</description>
     </item>
     
-    <item>
-      <title>Posting Message With Attachment via API</title>
-      <link>https://askyammer.github.io/post/2019-03-07-posting-message-with-attachment-via-api/</link>
-      <pubDate>Tue, 05 Mar 2019 18:19:27 -0600</pubDate>
-      
-      <guid>https://askyammer.github.io/post/2019-03-07-posting-message-with-attachment-via-api/</guid>
-      <description>Posting messages to Yammer via API is a relatively simple process. When you want to add file attachments into the mix, things get more complicated as you have to utilize multi-part form data to post the message. I&amp;rsquo;ll be focusing on posting a message to Yammer with an attachment in a single API call. Keep in mind this method only supports attachments up to 25MB in size. If you need to post files larger than 25MB, you&amp;rsquo;ll need to use the Yammer web, desktop, or mobile clients for this.</description>
-    </item>
-    
   </channel>
 </rss>
