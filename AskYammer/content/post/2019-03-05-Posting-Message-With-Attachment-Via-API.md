@@ -14,6 +14,7 @@ This document assumes you have the following:
 1. A basic understanding of how to use Yammer APIs including obtaining an OAuth token.  If you're not familiar with this, please familiarize yourself with my [Yammer API Primer](https://askyammer.github.io/post/2017-09-05-yammer-api-primer/).
 2. A file you'd like to attach to a Yammer message.
 3. An up to date version of PowerShell.  This script was written and tested on PowerShell version 5.1.17763.316.  You can determine your PowerShell version by outputting the [$PSVersionTable.PSVersion](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-6#psversiontable) variable.
+4. An up to date version of the .NET framework.  Framework 4.5 should be enough, however this was written and tested on a machine running 4.7.2.  For information on checking which version of the .NET framework you have installed, please see [this document](https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
 
 ### How to use this script
 
