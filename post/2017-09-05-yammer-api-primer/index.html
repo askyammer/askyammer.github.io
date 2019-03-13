@@ -64,7 +64,7 @@
   "description" : "While most day to day tasks can be accomplished in the Yammer web app, utilizing our APIs can open up administrative and automation options previously very time consuming. If you’ve never worked with an API before, this can seem like a daunting task. With this article, I hope to demystify APIs and illustrate how anyone can utilize them to perform tasks like obtaining, posting, and deleting messages.
 Parts of an API call There are 3 main parts of an API call:",
   "inLanguage" : "en",
-  "wordCount": 1630,
+  "wordCount": 1668,
   "datePublished" : "2017-09-05T00:00:00",
   "dateModified" : "2017-09-05T00:00:00",
   "image" : "https://askyammer.github.io/img/SiteWide%20Images/avatar-favicon.png",
@@ -261,7 +261,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;8&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1630&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1668&nbsp;words
   
   
     &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Yammer Support
@@ -390,6 +390,10 @@ if (!doNotTrack) {
 <li>“HTTP/1.1 400 Bad Request” indicates the request isn’t formatted properly. For example, if the content-type header is missing when posting a message</li>
 <li>“HTTP/1.1 500 Internal Server Error” indicates you sent something in the API request that Yammer didn’t know how to handle</li>
 </ul>
+
+<blockquote>
+<p><strong>Note:</strong> The Try It Out section has been removed from our developer page so this section is not currently relevant. This note will be removed if the Try It Out section is added back to our developer docs.</p>
+</blockquote>
 
 <p>Once you’ve made sure you’re authorized to perform the action you’re trying to perform, the next step is to make sure you’ve formatted your API call properly.  For this, head to the Yammer Developer Center at <a href="https://developer.yammer.com/docs/rest-api-rate-limits">https://developer.yammer.com/docs/rest-api-rate-limits</a> and find the API being used.  As an example, let’s pretend you don’t know how to post a message to a group (which was covered above).  Note that when creating a resource (like a new post in Yammer), you use the POST method so find the POST message endpoint page located at <a href="https://developer.yammer.com/docs/messages-json-post">https://developer.yammer.com/docs/messages-json-post</a> and scroll to the bottom where it says Try It Out.  You know the body is going to be “Hello World!” and the group is going to be 8510571, so input that into the form and click Try It! (you might first have to authorize the Yammer Developer Center app on your Yammer account):</p>
 

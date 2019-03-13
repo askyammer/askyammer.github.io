@@ -114,6 +114,9 @@ Make sure Headers is clicked on the bottom pane and review the response code and
 * “HTTP/1.1 400 Bad Request” indicates the request isn’t formatted properly. For example, if the content-type header is missing when posting a message
 * “HTTP/1.1 500 Internal Server Error” indicates you sent something in the API request that Yammer didn’t know how to handle
 
+
+>**Note:** The Try It Out section has been removed from our developer page so this section is not currently relevant. This note will be removed if the Try It Out section is added back to our developer docs.
+
 Once you’ve made sure you’re authorized to perform the action you’re trying to perform, the next step is to make sure you’ve formatted your API call properly.  For this, head to the Yammer Developer Center at https://developer.yammer.com/docs/rest-api-rate-limits and find the API being used.  As an example, let’s pretend you don’t know how to post a message to a group (which was covered above).  Note that when creating a resource (like a new post in Yammer), you use the POST method so find the POST message endpoint page located at https://developer.yammer.com/docs/messages-json-post and scroll to the bottom where it says Try It Out.  You know the body is going to be “Hello World!” and the group is going to be 8510571, so input that into the form and click Try It! (you might first have to authorize the Yammer Developer Center app on your Yammer account):
 
 ![Try it Out](/img/2017-08-05 - Yammer API Primer/API_Tryitout.png)
